@@ -24,6 +24,7 @@
     width: 100vw;
     height: 100vh;
     position: relative;
+    user-select: none;
 }
 .calc-ui{
     height: 80%;
@@ -39,24 +40,30 @@
 .noti-bar{
     height: 4%;
     width: 100%;
-    background-color: #2a2d37;
     border-radius: 24px;
     flex: 1;
     display: flex;
     align-items: center;
+    padding: 0 16px;
 }
-.time{
+.time-container{
     height: 60%;
-    width: 15%;
-    background-color: #678983;
+    width: 20%;
     border-radius: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 300;
+    /* font-size: 16px;  */
 }
 .icon{
     height: 60%;
     width: 20%;
-    background-color: #678983;
     border-radius: 24px;
     margin-left: auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
 }
 .result{
     height: 30%;
