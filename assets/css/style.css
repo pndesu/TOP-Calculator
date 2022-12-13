@@ -56,6 +56,9 @@
     font-weight: 300;
     /* font-size: 16px;  */
 }
+.time{
+    user-select: none;
+}
 .icon{
     height: 60%;
     width: 20%;
@@ -67,7 +70,7 @@
 }
 .result{
     height: 30%;
-    background-color: #2a2d37;
+    background-color: #22252d;
     border-radius: 24px;
     display: flex;
     flex-direction: column;
@@ -76,7 +79,6 @@
 .first-result{
     height: 10%;
     width: 100%;
-    background-color: #678983;
     border-radius: 24px;
     display: flex;
     align-items: center;
@@ -90,7 +92,6 @@
 .second-result{
     height: 30%;
     width: 100%;
-    background-color: #678983;
     border-radius: 24px;
     font-size: larger;
     display: flex;
