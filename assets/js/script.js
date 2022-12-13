@@ -330,7 +330,33 @@ numDot.onclick = () => {
 //Operator keys functions
 
 numPow.addEventListener('click', () => {
-    if (operatorEntered == 0 && a){ //Prevent enter operator first (but also prevent toggle state when only a number is entered, therefore prevent b input)
+    if (a != '' && b != '' && operatorEntered == 1 && equal == 0){ //Chain operator
+        a = parseFloat(a);
+        b = parseFloat(b);
+        if (addCount == 1) {
+            a = add(a,b);
+        }
+        else if (subCount == 1) {
+            a = subtract(a,b);
+        }
+        else if (multCount == 1) {
+            a = multiply(a,b);
+        }
+        else if (divCount == 1) {
+            a = divide(a,b);
+        }
+        else if (modCount == 1) {
+            a = modulus(a,b);
+        }
+        else if (powCount == 1) {
+            a = power(a,b);
+        }
+        addCount = 0, subCount = 0, multCount = 0, divCount = 0, modCount = 0, powCount = 1, dotCount = 0;
+        firstResult.textContent = `${a} ^`
+        secondResult.textContent = a;
+        b = '';
+    }
+    else if (operatorEntered == 0 && a){ //Prevent enter operator first (but also prevent toggle state when only a number is entered, therefore prevent b input)
         operatorEntered = 1;
         addCount = 0, subCount = 0, multCount = 0, divCount = 0, modCount = 0, powCount = 1, dotCount = 0;
         firstResult.textContent = `${a} ^`;
@@ -345,7 +371,33 @@ numPow.addEventListener('click', () => {
     keyAfterEqual = 1, aFinished = 0;
 }) 
 numMod.addEventListener('click', () => {
-    if (operatorEntered == 0 && a){
+    if (a != '' && b != '' && operatorEntered == 1 && equal == 0){
+        a = parseFloat(a);
+        b = parseFloat(b);
+        if (addCount == 1) {
+            a = add(a,b);
+        }
+        else if (subCount == 1) {
+            a = subtract(a,b);
+        }
+        else if (multCount == 1) {
+            a = multiply(a,b);
+        }
+        else if (divCount == 1) {
+            a = divide(a,b);
+        }
+        else if (modCount == 1) {
+            a = modulus(a,b);
+        }
+        else if (powCount == 1) {
+            a = power(a,b);
+        }
+        addCount = 0, subCount = 0, multCount = 0, divCount = 0, modCount = 1, powCount = 0, dotCount = 0;
+        firstResult.textContent = `${a} %`
+        secondResult.textContent = a;
+        b = '';
+    }
+    else if (operatorEntered == 0 && a){
         operatorEntered = 1;
         addCount = 0, subCount = 0, multCount = 0, divCount = 0, modCount = 1, powCount = 0, dotCount = 0;
         firstResult.textContent = `${a} %`;
@@ -360,7 +412,33 @@ numMod.addEventListener('click', () => {
     keyAfterEqual = 1, aFinished = 0;
 }) 
 numDiv.addEventListener('click', () => {
-    if (operatorEntered == 0 && a){
+    if (a != '' && b != '' && operatorEntered == 1 && equal == 0){
+        a = parseFloat(a);
+        b = parseFloat(b);
+        if (addCount == 1) {
+            a = add(a,b);
+        }
+        else if (subCount == 1) {
+            a = subtract(a,b);
+        }
+        else if (multCount == 1) {
+            a = multiply(a,b);
+        }
+        else if (divCount == 1) {
+            a = divide(a,b);
+        }
+        else if (modCount == 1) {
+            a = modulus(a,b);
+        }
+        else if (powCount == 1) {
+            a = power(a,b);
+        }
+        addCount = 0, subCount = 0, multCount = 0, divCount = 1, modCount = 0, powCount = 0, dotCount = 0;
+        firstResult.textContent = `${a} /`
+        secondResult.textContent = a;
+        b = '';
+    }
+    else if (operatorEntered == 0 && a){
         operatorEntered = 1;
         addCount = 0, subCount = 0, multCount = 0, divCount = 1, modCount = 0, powCount = 0, dotCount = 0;
         firstResult.textContent = `${a} /`;
@@ -375,7 +453,33 @@ numDiv.addEventListener('click', () => {
     keyAfterEqual = 1, aFinished = 0;
 }) 
 numMult.addEventListener('click', () => {
-    if (operatorEntered == 0 && a){
+    if (a != '' && b != '' && operatorEntered == 1 && equal == 0){
+        a = parseFloat(a);
+        b = parseFloat(b);
+        if (addCount == 1) {
+            a = add(a,b);
+        }
+        else if (subCount == 1) {
+            a = subtract(a,b);
+        }
+        else if (multCount == 1) {
+            a = multiply(a,b);
+        }
+        else if (divCount == 1) {
+            a = divide(a,b);
+        }
+        else if (modCount == 1) {
+            a = modulus(a,b);
+        }
+        else if (powCount == 1) {
+            a = power(a,b);
+        }
+        addCount = 0, subCount = 0, multCount = 1, divCount = 0, modCount = 0, powCount = 0, dotCount = 0;
+        firstResult.textContent = `${a} *`
+        secondResult.textContent = a;
+        b = '';
+    }
+    else if (operatorEntered == 0 && a){
         operatorEntered = 1;
         addCount = 0, subCount = 0, multCount = 1, divCount = 0, modCount = 0, powCount = 0, dotCount = 0;
         firstResult.textContent = `${a} *`;
@@ -390,7 +494,33 @@ numMult.addEventListener('click', () => {
     keyAfterEqual = 1, aFinished = 0;
 }) 
 numSub.addEventListener('click', () => {
-    if (operatorEntered == 0 && a){
+    if (a != '' && b != '' && operatorEntered == 1 && equal == 0){
+        a = parseFloat(a);
+        b = parseFloat(b);
+        if (addCount == 1) {
+            a = add(a,b);
+        }
+        else if (subCount == 1) {
+            a = subtract(a,b);
+        }
+        else if (multCount == 1) {
+            a = multiply(a,b);
+        }
+        else if (divCount == 1) {
+            a = divide(a,b);
+        }
+        else if (modCount == 1) {
+            a = modulus(a,b);
+        }
+        else if (powCount == 1) {
+            a = power(a,b);
+        }
+        addCount = 0, subCount = 1, multCount = 0, divCount = 0, modCount = 0, powCount = 0, dotCount = 0;
+        firstResult.textContent = `${a} -`
+        secondResult.textContent = a;
+        b = '';
+    }
+    else if (operatorEntered == 0 && a){
         operatorEntered = 1;
         addCount = 0, subCount = 1, multCount = 0, divCount = 0, modCount = 0, powCount = 0, dotCount = 0;
         firstResult.textContent = `${a} -`;
@@ -405,7 +535,33 @@ numSub.addEventListener('click', () => {
     keyAfterEqual = 1, aFinished = 0;
 }) 
 numAdd.addEventListener('click', () => {
-    if (operatorEntered == 0 && a && a){
+    if (a != '' && b != '' && operatorEntered == 1 && equal == 0){
+        a = parseFloat(a);
+        b = parseFloat(b);
+        if (addCount == 1) {
+            a = add(a,b);
+        }
+        else if (subCount == 1) {
+            a = subtract(a,b);
+        }
+        else if (multCount == 1) {
+            a = multiply(a,b);
+        }
+        else if (divCount == 1) {
+            a = divide(a,b);
+        }
+        else if (modCount == 1) {
+            a = modulus(a,b);
+        }
+        else if (powCount == 1) {
+            a = power(a,b);
+        }
+        addCount = 1, subCount = 0, multCount = 0, divCount = 0, modCount = 0, powCount = 0, dotCount = 0;
+        firstResult.textContent = `${a} +`;
+        secondResult.textContent = a;
+        b = '';
+    }
+    else if (operatorEntered == 0 && a){
         operatorEntered = 1;
         addCount = 1, subCount = 0, multCount = 0, divCount = 0, modCount = 0, powCount = 0, dotCount = 0;
         firstResult.textContent = `${a} +`;
@@ -420,44 +576,7 @@ numAdd.addEventListener('click', () => {
     keyAfterEqual = 1, aFinished = 0;
 }) 
 
-numEqual.addEventListener('click', () => { //When hitting equal button
-    if (a) a = parseFloat(a);
-    if (b) b = parseFloat(b);
-    if (addCount == 1) {
-        firstResult.textContent = `${a} + ${b}`
-        result = add(a,b);
-    }
-    else if (subCount == 1) {
-        firstResult.textContent = `${a} - ${b}`
-        result = subtract(a,b);
-    }
-    else if (multCount == 1) {
-        firstResult.textContent = `${a} * ${b}`
-        result = multiply(a,b);
-    }
-    else if (divCount == 1) {
-        firstResult.textContent = `${a} / ${b}`
-        result = divide(a,b);
-    }
-    else if (modCount == 1) {
-        firstResult.textContent = `${a} % ${b}`
-        result = modulus(a,b);
-    }
-    else if (powCount == 1) {
-        firstResult.textContent = `${a} ^ ${b}`
-        result = power(a,b);
-    }
-    equal = 1;
-    if (operatorEntered == 0){
-        result = a
-        secondResult.textContent = result;
-        equal = 0;
-        // a = '';
-    }
-    else secondResult.textContent = result;
-    if (b == '') aFinished = 1;
-    if (equal == 1 && b != '') bFinished = 1;
-})
+numEqual.addEventListener('click', equalBtn)
 
 numAC.addEventListener('click', () => reset()); //AC function
 numDEL.addEventListener('click', () => {    //Delete function
@@ -530,4 +649,49 @@ function reset(){
     result = 0, equal = 0, keyAfterEqual = 0, aFinished = 0, bFinished = 0;
     secondResult.textContent = '';
     firstResult.textContent = '';
+}
+
+function equalBtn(){
+    { //When hitting equal button
+        if (a) a = parseFloat(a);
+        if (b) b = parseFloat(b);
+        checkOperator();
+        equal = 1;
+        if (operatorEntered == 0){
+            result = a
+            secondResult.textContent = result;
+            equal = 0;
+            // a = '';
+        }
+        else secondResult.textContent = result;
+        if (b == '') aFinished = 1;
+        if (equal == 1 && b != '') bFinished = 1;
+    }
+}
+
+function checkOperator(){
+    if (addCount == 1) {
+        firstResult.textContent = `${a} + ${b}`
+        result = add(a,b);
+    }
+    else if (subCount == 1) {
+        firstResult.textContent = `${a} - ${b}`
+        result = subtract(a,b);
+    }
+    else if (multCount == 1) {
+        firstResult.textContent = `${a} * ${b}`
+        result = multiply(a,b);
+    }
+    else if (divCount == 1) {
+        firstResult.textContent = `${a} / ${b}`
+        result = divide(a,b);
+    }
+    else if (modCount == 1) {
+        firstResult.textContent = `${a} % ${b}`
+        result = modulus(a,b);
+    }
+    else if (powCount == 1) {
+        firstResult.textContent = `${a} ^ ${b}`
+        result = power(a,b);
+    }
 }
