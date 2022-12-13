@@ -133,3 +133,28 @@
     opacity: 0.7;
     cursor: pointer;
 }
+.footer{
+    display: flex;
+    position: fixed;
+    height: 30px;
+    width: 100%;
+    background-color: #808080;
+    bottom: 0;
+    align-items: center;
+    padding-left: 8px;
+    font-weight: 300;
+}
+.github-logo{
+    height: 22px;
+    width: 22px;
+    margin-right: 4px;
+}
+.bio{
+    text-decoration: 0;
+    color: black;
+    font-weight: 300;
+}
+.bio:hover{
+    text-decoration: underline;
+    cursor: pointer;
+}

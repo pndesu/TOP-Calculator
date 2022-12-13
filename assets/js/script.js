@@ -33,7 +33,7 @@ let a = '';
 let b = '';
 let operatorEntered = 0;
 let addCount = 0, subCount = 0, multCount = 0, divCount = 0, modCount = 0, powCount = 0, dotCount = 0;
-let result = 0, equal = 0;
+let result = 0, equal = 0, keyAfterEqual = 0;
 
 //Number keys functions
 
@@ -49,7 +49,9 @@ num0.onclick = () => {
         }
     }
     else if (equal == 1){
-        reset();
+        if (b && operatorEntered == 0) reset();
+        if (a && keyAfterEqual == 0) reset();
+        if (a && b && operatorEntered == 1) reset();
         secondResult.textContent += 0;
         if (operatorEntered){
             b += '0';
@@ -72,7 +74,9 @@ num1.onclick = () => {
         }
     }
     else if (equal == 1){
-        reset();
+        if (b && operatorEntered == 0) reset();
+        if (a && keyAfterEqual == 0) reset();
+        if (a && b && operatorEntered == 1) reset();
         secondResult.textContent += 1;
         if (operatorEntered){
             b += '1';
@@ -95,7 +99,9 @@ num2.onclick = () => {
         }
     }
     else if (equal == 1){
-        reset();
+        if (b && operatorEntered == 0) reset();
+        if (a && keyAfterEqual == 0) reset();
+        if (a && b && operatorEntered == 1) reset();
         secondResult.textContent += 2;
         if (operatorEntered){
             b += '2';
@@ -118,7 +124,9 @@ num3.onclick = () => {
         }
     }
     else if (equal == 1){
-        reset();
+        if (b && operatorEntered == 0) reset();
+        if (a && keyAfterEqual == 0) reset();
+        if (a && b && operatorEntered == 1) reset();
         secondResult.textContent += 3;
         if (operatorEntered){
             b += '3';
@@ -141,7 +149,9 @@ num4.onclick = () => {
         }
     }
     else if (equal == 1){
-        reset();
+        if (b && operatorEntered == 0) reset();
+        if (a && keyAfterEqual == 0) reset();
+        if (a && b && operatorEntered == 1) reset();
         secondResult.textContent += 4;
         if (operatorEntered){
             b += '4';
@@ -164,7 +174,9 @@ num5.onclick = () => {
         }
     }
     else if (equal == 1){
-        reset();
+        if (b && operatorEntered == 0) reset();
+        if (a && keyAfterEqual == 0) reset();
+        if (a && b && operatorEntered == 1) reset();
         secondResult.textContent += 5;
         if (operatorEntered){
             b += '5';
@@ -187,7 +199,9 @@ num6.onclick = () => {
         }
     }
     else if (equal == 1){
-        reset();
+        if (b && operatorEntered == 0) reset();
+        if (a && keyAfterEqual == 0) reset();
+        if (a && b && operatorEntered == 1) reset();
         secondResult.textContent += 6;
         if (operatorEntered){
             b += '6';
@@ -210,7 +224,9 @@ num7.onclick = () => {
         }
     }
     else if (equal == 1){
-        reset();
+        if (b && operatorEntered == 0) reset();
+        if (a && keyAfterEqual == 0) reset();
+        if (a && b && operatorEntered == 1) reset();
         secondResult.textContent += 7;
         if (operatorEntered){
             b += '7';
@@ -233,7 +249,9 @@ num8.onclick = () => {
         }
     }
     else if (equal == 1){
-        reset();
+        if (b && operatorEntered == 0) reset();
+        if (a && keyAfterEqual == 0) reset();
+        if (a && b && operatorEntered == 1) reset();
         secondResult.textContent += 8;
         if (operatorEntered){
             b += '8';
@@ -256,7 +274,9 @@ num9.onclick = () => {
         }
     }
     else if (equal == 1){
-        reset();
+        if (b && operatorEntered == 0) reset();
+        if (a && keyAfterEqual == 0) reset();
+        if (a && b && operatorEntered == 1) reset();
         secondResult.textContent += 9;
         if (operatorEntered){
             b += '9';
@@ -281,7 +301,9 @@ numDot.onclick = () => {
         }
     }
     else if (equal == 1 && dotCount == 0){
-        reset();
+        if (b && operatorEntered == 0) reset();
+        if (a && keyAfterEqual == 0) reset();
+        if (a && b && operatorEntered == 1) reset();
         secondResult.textContent += '.';
         if (operatorEntered){
             b += '.';
@@ -309,6 +331,7 @@ numPow.addEventListener('click', () => {
         firstResult.textContent = `${a} ^`;
         equal = 0;
     }
+    keyAfterEqual = 1;
 }) 
 numMod.addEventListener('click', () => {
     if (operatorEntered == 0 && a){
@@ -316,13 +339,14 @@ numMod.addEventListener('click', () => {
         addCount = 0, subCount = 0, multCount = 0, divCount = 0, modCount = 1, powCount = 0, dotCount = 0;
         firstResult.textContent = `${a} %`;
     }
-    else if (opera1orEntered == 1){
+    else if (operatorEntered == 1){
         addCount = 0, subCount = 0, multCount = 0, divCount = 0, modCount = 1, powCount = 0, dotCount = 0;
         a = result;
         b = '';
         firstResult.textContent = `${a} %`;
         equal = 0;
     }
+    keyAfterEqual = 1;
 }) 
 numDiv.addEventListener('click', () => {
     if (operatorEntered == 0 && a){
@@ -337,6 +361,7 @@ numDiv.addEventListener('click', () => {
         firstResult.textContent = `${a} /`;
         equal = 0;
     }
+    keyAfterEqual = 1;
 }) 
 numMult.addEventListener('click', () => {
     if (operatorEntered == 0 && a){
@@ -351,6 +376,7 @@ numMult.addEventListener('click', () => {
         firstResult.textContent = `${a} *`;
         equal = 0;
     }
+    keyAfterEqual = 1;
 }) 
 numSub.addEventListener('click', () => {
     if (operatorEntered == 0 && a){
@@ -365,6 +391,7 @@ numSub.addEventListener('click', () => {
         firstResult.textContent = `${a} -`;
         equal = 0;
     }
+    keyAfterEqual = 1;
 }) 
 numAdd.addEventListener('click', () => {
     if (operatorEntered == 0 && a && a){
@@ -379,6 +406,7 @@ numAdd.addEventListener('click', () => {
         firstResult.textContent = `${a} +`;
         equal = 0;
     }
+    keyAfterEqual = 1;
 }) 
 
 numEqual.addEventListener('click', () => { //When hitting equal button
@@ -410,45 +438,69 @@ numEqual.addEventListener('click', () => { //When hitting equal button
     }
     equal = 1;
     if (operatorEntered == 0){
-        secondResult.textContent = a;
+        result = a
+        secondResult.textContent = result;
         equal = 0;
         // a = '';
     }
     else secondResult.textContent = result;
 })
 
-numAC.addEventListener('click', () => reset());
-
+numAC.addEventListener('click', () => reset()); //AC function
+numDEL.addEventListener('click', () => {    //Delete function
+    if (operatorEntered == 0) {
+        a = a.slice(0,-1);
+        console.log(a);
+        secondResult.textContent = a;
+    }
+    else{
+        b = b.slice(0,-1);
+        console.log(b);
+        secondResult.textContent = b;
+    }
+})
 
 function add(a,b){
     console.log(a);
     console.log(b);
     console.log(a+b);
-    return a+b;
+    return Math.round( (a+b) * 100 + Number.EPSILON ) / 100;
 }
 function subtract(a,b){
     console.log(a);
     console.log(b);
     console.log(a-b);
-    return a-b;
+    return Math.round( (a-b) * 100 + Number.EPSILON ) / 100;
 }
 function multiply(a,b){
     console.log(a);
     console.log(b);
     console.log(a*b);
-    return a*b;
+    return Math.round( (a*b) * 100 + Number.EPSILON ) / 100;
 }
 function divide(a,b){
     console.log(a);
     console.log(b);
     console.log(Math.round( (a/b) * 100 + Number.EPSILON ) / 100);
-    return (b == 0) ? 'ERROR' : Math.round( (a/b) * 100 + Number.EPSILON ) / 100;
+    if (b == 0){
+        reset();
+        return 'ERROR';
+    }
+    else{
+        return Math.round( (a/b) * 100 + Number.EPSILON ) / 100;
+    }
 }
 function modulus(a,b){
     console.log(a);
     console.log(b);
     console.log(a%b);
-    return (b == 0) ? 'ERROR' : a%b;
+    if (b == 0){
+        reset();
+        return 'ERROR';
+    }
+    else{
+        return Math.round( (a%b) * 100 + Number.EPSILON ) / 100;
+    }
 }
 function power(a,b){
     console.log(a);
@@ -462,7 +514,7 @@ function reset(){
     b = '';
     operatorEntered = 0;
     addCount = 0, subCount = 0, multCount = 0, divCount = 0, modCount = 0, powCount = 0, dotCount = 0;
-    result = 0, equal = 0;
+    result = 0, equal = 0, keyAfterEqual = 0;
     secondResult.textContent = '';
     firstResult.textContent = '';
 }
